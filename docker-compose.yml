@@ -1,0 +1,16 @@
+storage:
+  image: busybox
+  volumes:
+    - /data
+mongodb:
+  image: "mongo:latest"
+  ports:
+    - "27017:27017"
+  volumes_from:
+    - storage
+#backend:
+  #build: .
+  #links:
+    #- mongodb
+  #ports:
+    #- "5000:5000"
